@@ -1,0 +1,305 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Check_Reporting_Period" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IN_strReturnPeriod" Type="InArgument(x:String)" />
+    <x:Property Name="OUT_strContinue" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>680,701</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Check_Reporting_Period_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Check_Return_Period" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID9</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,335.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">310,178.5 310,228.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log End" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Workflow Ended - Check Return Period&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,234.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,285.5 300,335.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="668,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">290,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">320,77.5 320,147.5</av:PointCollection>
+            <x:Double x:Key="Width">634</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Flowchart.StartNode>
+          <x:Reference>__ReferenceID6</x:Reference>
+        </Flowchart.StartNode>
+        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID6" DisplayName="Return Period" Expression="[IN_strReturnPeriod]" sap:VirtualizedContainerService.HintSize="78,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">281,147.5</av:Point>
+              <av:Size x:Key="ShapeSize">78,87</av:Size>
+              <av:PointCollection x:Key="Qtr Apr-JunConnector">339.5,147.5 339.5,101.62788222774 500,101.62788222774 500,127</av:PointCollection>
+              <av:PointCollection x:Key="Qtr Jul-SepConnector">281,212.75 140,212.75 140,247</av:PointCollection>
+              <av:PointCollection x:Key="Qtr Jan-MarConnector">300.5,147.5 300.5,99.6278822277403 140,99.6278822277403 140,127</av:PointCollection>
+              <av:PointCollection x:Key="Qtr Oct-DecConnector">359,212.75 500,212.75 500,247</av:PointCollection>
+              <av:PointCollection x:Key="Year (Jan-Dec)Connector">320,234.5 320,337</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <FlowStep x:Key="Qtr Jan-Mar" x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">40,127</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">40,160 10,160 10,530 220,530</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Qtr Jan-Mar" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Now.ToString(&quot;MMMM&quot;) = &quot;April&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;May&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;June&quot;]" DisplayName="If the current month is April, May or June" sap:VirtualizedContainerService.HintSize="610,209" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[IN_strReturnPeriod + &quot; correct reporting period for &quot; + Now.ToString(&quot;MMMM&quot;)]" />
+                </If.Then>
+                <If.Else>
+                  <ui:MessageBox Buttons="YesNo" Caption="Reporting Period Incorrect" ChosenButton="[OUT_strContinue]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The reporting period is incorrect for today's date;&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Reporting period; &quot; + IN_strReturnPeriod + System.Environment.NewLine + &quot;Current Month; &quot; + Now.ToString(&quot;MMMM&quot;) + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to continue processing this case?&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID0">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">220,504.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[OUT_strContinue = &quot;No&quot;]" DisplayName="If Return Period is Incorrect &amp; User wants to stop processing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Throw DisplayName="Throw Business Exception" Exception="[New BusinessRuleException(&quot;Reporting period did not match and the case was stopped by the user&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </If.Then>
+                </If>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
+          <FlowStep x:Key="Qtr Apr-Jun" x:Name="__ReferenceID2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">400,127</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">600,160 630,160 630,530 420,530</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Qtr Apr-Jun" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Now.ToString(&quot;MMMM&quot;) = &quot;July&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;August&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;September&quot;]" DisplayName="If the current month is July, August or September" sap:VirtualizedContainerService.HintSize="610,209" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[IN_strReturnPeriod + &quot; correct reporting period for &quot; + Now.ToString(&quot;MMMM&quot;)]" />
+                </If.Then>
+                <If.Else>
+                  <ui:MessageBox Buttons="YesNo" Caption="Reporting Period Incorrect" ChosenButton="[OUT_strContinue]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;The reporting period is incorrect for today's date;&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Reporting period; &quot; + IN_strReturnPeriod + System.Environment.NewLine + &quot;Current Month; &quot; + Now.ToString(&quot;MMMM&quot;) + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to continue processing this case?&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+          <FlowStep x:Key="Qtr Jul-Sep" x:Name="__ReferenceID3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">40,247</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">140,313 140,474.5 320,474.5 320,504.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Qtr Jul-Sep" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Now.ToString(&quot;MMMM&quot;) = &quot;October&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;November&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;December&quot;]" DisplayName="If the current month is October, November or December" sap:VirtualizedContainerService.HintSize="610,209" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Then>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[IN_strReturnPeriod + &quot; correct reporting period for &quot; + Now.ToString(&quot;MMMM&quot;)]" />
+                </If.Then>
+                <If.Else>
+                  <ui:MessageBox Buttons="YesNo" Caption="Reporting Period Incorrect" ChosenButton="[OUT_strContinue]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;The reporting period is incorrect for today's date;&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Reporting period; &quot; + IN_strReturnPeriod + System.Environment.NewLine + &quot;Current Month; &quot; + Now.ToString(&quot;MMMM&quot;) + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to continue processing this case?&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+          <FlowStep x:Key="Qtr Oct-Dec" x:Name="__ReferenceID4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">400,247</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">500,313 500,474.5 320,474.5 320,504.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Qtr Oct-Dec" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Now.ToString(&quot;MMMM&quot;) = &quot;January&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;February&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;March&quot;]" DisplayName="If the current month is January, February or March" sap:VirtualizedContainerService.HintSize="610,209" sap2010:WorkflowViewState.IdRef="If_4">
+                <If.Then>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[IN_strReturnPeriod + &quot; correct reporting period for &quot; + Now.ToString(&quot;MMMM&quot;)]" />
+                </If.Then>
+                <If.Else>
+                  <ui:MessageBox Buttons="YesNo" Caption="Reporting Period Incorrect" ChosenButton="[OUT_strContinue]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;The reporting period is incorrect for today's date;&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Reporting period; &quot; + IN_strReturnPeriod + System.Environment.NewLine + &quot;Current Month; &quot; + Now.ToString(&quot;MMMM&quot;) + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to continue processing this case?&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+          <FlowStep x:Key="Year (Jan-Dec)" x:Name="__ReferenceID5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">220,337</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">320,403 320,504.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Year (Jan-Dec)" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[Now.ToString(&quot;MMMM&quot;) = &quot;January&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;February&quot; Or Now.ToString(&quot;MMMM&quot;) = &quot;March&quot;]" DisplayName="If the current month is January, February or March" sap:VirtualizedContainerService.HintSize="610,209" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Then>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[IN_strReturnPeriod + &quot; correct reporting period for &quot; + Now.ToString(&quot;MMMM&quot;)]" />
+                </If.Then>
+                <If.Else>
+                  <ui:MessageBox Buttons="YesNo" Caption="Reporting Period Incorrect" ChosenButton="[OUT_strContinue]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;The reporting period is incorrect for today's date;&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Reporting period; &quot; + IN_strReturnPeriod + System.Environment.NewLine + &quot;Current Month; &quot; + Now.ToString(&quot;MMMM&quot;) + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to continue processing this case?&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowSwitch>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
+        <x:Reference>__ReferenceID0</x:Reference>
+      </Flowchart>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID7</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,234.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - Check Return Period&quot;]" />
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID8</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+  </Flowchart>
+</Activity>
