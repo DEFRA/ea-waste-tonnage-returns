@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>624,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proxy_Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="23">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,10 +32,11 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,6 +64,8 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Proxy_Main" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -212,7 +215,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">300,675.5 300,725.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Start Up" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <TryCatch DisplayName="Try Start Up" sap:VirtualizedContainerService.HintSize="438,631" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -350,30 +353,14 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Process Case" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logic Workflows\Process Case.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">
-                                                  <mva:VisualBasicValue x:TypeArguments="ui:Window" ExpressionText="windowORATS" />
-                                                </InArgument>
-                                                <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">
-                                                  <mva:VisualBasicReference x:TypeArguments="ui:Window" ExpressionText="windowImportSpreadsheet" />
-                                                </OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
-                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
-                                                </OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
-                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReasonForStoppingRobot" />
-                                                </OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strSenderEmailAddress">
-                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSenderEmailAddress" />
-                                                </OutArgument>
-                                                <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">
-                                                  <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="mailCurrentCase" />
-                                                </InArgument>
-                                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">
-                                                  <mva:VisualBasicReference x:TypeArguments="ui:GenericValue" ExpressionText="strCaseID" />
-                                                </OutArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[dictConfig]</InArgument>
+                                                <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">[windowORATS]</InArgument>
+                                                <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">[windowImportSpreadsheet]</OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[strReasonForStoppingRobot]</OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strSenderEmailAddress">[strSenderEmailAddress]</OutArgument>
+                                                <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">[mailCurrentCase]</InArgument>
+                                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">[strCaseID]</OutArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
