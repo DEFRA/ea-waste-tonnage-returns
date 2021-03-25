@@ -54,7 +54,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,6 +74,7 @@
       <AssemblyReference>Microsoft.SharePoint.Client.Runtime</AssemblyReference>
       <AssemblyReference>Microsoft.SharePoint.Client</AssemblyReference>
       <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Input_Disclosure_Status" sap:VirtualizedContainerService.HintSize="510,751" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -112,7 +113,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7365f517-2b73-4132-8343-1f2ee59205f6" InformativeScreenshot="7270d2004d051fbea7f5e5fe50b469df" Selector="&lt;webctrl aaname='Disclosure Status' tag='LABEL' /&gt;&lt;nav up='2' /&gt;&lt;webctrl aaname='Enter value here' isleaf='1' tag='DIV' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7365f517-2b73-4132-8343-1f2ee59205f6" InformativeScreenshot="7270d2004d051fbea7f5e5fe50b469df" Selector="&lt;webctrl aaname='Disclosure Status' tag='LABEL' /&gt;&lt;nav up='2' /&gt;&lt;webctrl aaname='*' isleaf='1' tag='DIV' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>

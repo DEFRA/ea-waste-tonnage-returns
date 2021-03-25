@@ -107,7 +107,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7365f517-2b73-4132-8343-1f2ee59205f6" InformativeScreenshot="ee18ed6501e9db382a7b44b6e71f2e1c" Selector="&lt;webctrl aaname='Received Date' tag='LABEL' /&gt;&#xA;&lt;nav up='2' /&gt;&#xA;&lt;webctrl aaname='Enter value here' isleaf='1' tag='DIV' /&gt;&#xA;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7365f517-2b73-4132-8343-1f2ee59205f6" InformativeScreenshot="ee18ed6501e9db382a7b44b6e71f2e1c" Selector="&lt;webctrl aaname='Received Date' tag='LABEL' /&gt;&lt;nav up='2' /&gt;&lt;webctrl aaname='*' isleaf='1' tag='DIV' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>

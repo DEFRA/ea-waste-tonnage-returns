@@ -3,7 +3,7 @@
   "description": "The main workflow file for the EA Waste Tonnage Returns  Process",
   "main": "Main.xaml",
   "dependencies": {
-    "DMS.Library": "[1.0.9]",
+    "DMS.Library": "[1.0.11]",
     "ORATS": "[1.0.9]",
     "Reusable.Components": "[1.0.7]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
