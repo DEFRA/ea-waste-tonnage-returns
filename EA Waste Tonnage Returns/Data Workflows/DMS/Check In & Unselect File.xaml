@@ -97,9 +97,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID17</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID8">
+    <FlowStep x:Name="__ReferenceID14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,430.5</av:Point>
@@ -122,7 +122,7 @@
         </ui:LogMessage>
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID11">
+    <FlowStep x:Name="__ReferenceID17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,117.5</av:Point>
@@ -145,7 +145,7 @@
         </ui:LogMessage>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID9">
+        <FlowStep x:Name="__ReferenceID15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,223.5</av:Point>
@@ -163,12 +163,8 @@
               <If.Then>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Workflows\Config Reader.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="IN_strConfigPath">
-                      <Literal x:TypeArguments="x:String">Documents/Config/config.xlsx</Literal>
-                    </InArgument>
-                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="OUT_dictConfig">
-                      <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="IN_strConfigPath">Documents/Config/config.xlsx</InArgument>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="OUT_dictConfig">[IN_dictConfig]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </If.Then>
@@ -220,7 +216,7 @@
             </If>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID10">
+            <FlowStep x:Name="__ReferenceID16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,329.5</av:Point>
@@ -228,7 +224,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,380.5 300,430.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="636,793" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="634,1096" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="boolMoreOptionsButton" />
                   <Variable x:TypeArguments="x:Boolean" Name="boolCheckInButton" />
@@ -239,17 +235,16 @@
                     <av:Point x:Key="ShapeLocation">160,2.5</av:Point>
                     <av:Size x:Key="ShapeSize">60,75</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">190,77.5 190,119.5</av:PointCollection>
-                    <x:Double x:Key="Height">757</x:Double>
-                    <x:Double x:Key="Width">602</x:Double>
+                    <x:Double x:Key="Height">1060</x:Double>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID7</x:Reference>
+                  <x:Reference>__ReferenceID13</x:Reference>
                 </Flowchart.StartNode>
-                <FlowStep>
+                <FlowStep x:Name="__ReferenceID0">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">90,699</av:Point>
+                      <av:Point x:Key="ShapeLocation">90,1021</av:Point>
                       <av:Size x:Key="ShapeSize">200,22</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -261,7 +256,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </df:Click_Select_File_Item_Button>
                 </FlowStep>
-                <FlowStep x:Name="__ReferenceID7">
+                <FlowStep x:Name="__ReferenceID13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">90,119.5</av:Point>
@@ -277,7 +272,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </df:Check_For_Menu_More_Options_Button>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID0" Condition="[boolMoreOptionsButton]" DisplayName="More Options?" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                    <FlowDecision x:Name="__ReferenceID1" Condition="[boolMoreOptionsButton]" DisplayName="More Options?" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -288,12 +283,12 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID1">
+                        <FlowStep x:Name="__ReferenceID2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">90,329</av:Point>
                               <av:Size x:Key="ShapeSize">200,22</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">190,351 190,401</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">190,351 190,391</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <df:Click_Menu_More_Options_Button DisplayName="Click Menu More Options Button" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Click_Menu_More_Options_Button_1">
@@ -304,12 +299,12 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </df:Click_Menu_More_Options_Button>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID5">
+                            <FlowStep x:Name="__ReferenceID6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">90,401</av:Point>
+                                  <av:Point x:Key="ShapeLocation">90,391</av:Point>
                                   <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">190,423 190,473</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">190,413 190,463</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <df:Check_For_Check_In_Button DisplayName="Check For Check In Button" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Check_For_Check_In_Button_1" OUT_boolCheckIn="[boolCheckInButton]">
@@ -320,22 +315,23 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </df:Check_For_Check_In_Button>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID3" Condition="[boolCheckInButton]" DisplayName="Check In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                <FlowDecision x:Name="__ReferenceID4" Condition="[boolCheckInButton]" DisplayName="Check In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <av:Point x:Key="ShapeLocation">155,473</av:Point>
+                                      <av:Point x:Key="ShapeLocation">155,463</av:Point>
                                       <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                      <av:PointCollection x:Key="FalseConnector">225,516.5 305,516.5</av:PointCollection>
-                                      <av:PointCollection x:Key="TrueConnector">155,516.5 130,516.5 130,579 190,579 190,609</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">225,506.5 305,506.5</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">155,506.5 130,506.5 130,569 190,569 190,599</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.True>
-                                    <FlowStep x:Name="__ReferenceID6">
+                                    <FlowStep x:Name="__ReferenceID7">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">90,609</av:Point>
+                                          <av:Point x:Key="ShapeLocation">90,599</av:Point>
                                           <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">190,621 190,671</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <df:Click_Check_In_Button DisplayName="Click Check In Button" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Click_Check_In_Button_1">
@@ -345,13 +341,100 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </df:Click_Check_In_Button>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID12">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">90,671</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">190,693 190,741</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Delay>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID11">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">90,741</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">190,763 190,813</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <df:Check_For_Check_In_Button DisplayName="Check For Check In Button" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Check_For_Check_In_Button_2" OUT_boolCheckIn="[boolCheckInButton]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </df:Check_For_Check_In_Button>
+                                              <FlowStep.Next>
+                                                <FlowDecision x:Name="__ReferenceID10" Condition="[boolCheckInButton]" DisplayName="Check In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <av:Point x:Key="ShapeLocation">155,813</av:Point>
+                                                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                      <av:PointCollection x:Key="FalseConnector">225,856.5 305,856.5</av:PointCollection>
+                                                      <av:PointCollection x:Key="TrueConnector">155,856.5 130,856.5 130,919 190,919 190,949</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <FlowDecision.True>
+                                                    <FlowStep x:Name="__ReferenceID8">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">90,949</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">190,971 190,1021</av:PointCollection>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <df:Click_Check_In_Button DisplayName="Click Check In Button" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Click_Check_In_Button_2">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </df:Click_Check_In_Button>
+                                                      <FlowStep.Next>
+                                                        <x:Reference>__ReferenceID0</x:Reference>
+                                                      </FlowStep.Next>
+                                                    </FlowStep>
+                                                  </FlowDecision.True>
+                                                  <FlowDecision.False>
+                                                    <FlowStep x:Name="__ReferenceID9">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">305,845.5</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Throw DisplayName="Throw System Exception" Exception="[New System.Exception(&quot;Check in button is unavailable&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Throw>
+                                                    </FlowStep>
+                                                  </FlowDecision.False>
+                                                </FlowDecision>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
                                     </FlowStep>
                                   </FlowDecision.True>
                                   <FlowDecision.False>
-                                    <FlowStep x:Name="__ReferenceID4">
+                                    <FlowStep x:Name="__ReferenceID5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">305,505.5</av:Point>
+                                          <av:Point x:Key="ShapeLocation">305,495.5</av:Point>
                                           <av:Size x:Key="ShapeSize">200,22</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -371,7 +454,7 @@
                         </FlowStep>
                       </FlowDecision.True>
                       <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID2">
+                        <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">312,219</av:Point>
@@ -390,23 +473,28 @@
                     </FlowDecision>
                   </FlowStep.Next>
                 </FlowStep>
-                <x:Reference>__ReferenceID0</x:Reference>
                 <x:Reference>__ReferenceID1</x:Reference>
                 <x:Reference>__ReferenceID2</x:Reference>
                 <x:Reference>__ReferenceID3</x:Reference>
                 <x:Reference>__ReferenceID4</x:Reference>
                 <x:Reference>__ReferenceID5</x:Reference>
                 <x:Reference>__ReferenceID6</x:Reference>
+                <x:Reference>__ReferenceID7</x:Reference>
+                <x:Reference>__ReferenceID8</x:Reference>
+                <x:Reference>__ReferenceID9</x:Reference>
+                <x:Reference>__ReferenceID10</x:Reference>
+                <x:Reference>__ReferenceID11</x:Reference>
+                <x:Reference>__ReferenceID12</x:Reference>
               </Flowchart>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID8</x:Reference>
+                <x:Reference>__ReferenceID14</x:Reference>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID9</x:Reference>
-    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
   </Flowchart>
 </Activity>

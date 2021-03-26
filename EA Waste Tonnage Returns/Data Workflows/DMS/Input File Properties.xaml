@@ -342,7 +342,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,473.5 300,514.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Flowchart DisplayName="Check Properties Inputs" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                  <Flowchart DisplayName="Check Properties Inputs" sap:VirtualizedContainerService.HintSize="635,850" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                     <Flowchart.Variables>
                       <Variable x:TypeArguments="x:String" Name="strInputDocumentDate" />
                       <Variable x:TypeArguments="x:String" Name="strInputReceivedDate" />
@@ -355,7 +355,8 @@
                         <av:Point x:Key="ShapeLocation">160,2.5</av:Point>
                         <av:Size x:Key="ShapeSize">60,75</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">190,77.5 190,119.5</av:PointCollection>
-                        <x:Double x:Key="Height">824</x:Double>
+                        <x:Double x:Key="Height">814</x:Double>
+                        <x:Double x:Key="Width">601</x:Double>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Flowchart.StartNode>
