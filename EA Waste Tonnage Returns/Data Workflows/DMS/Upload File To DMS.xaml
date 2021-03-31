@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Upload_File_To_DMS" this:Upload_File_To_DMS.IN_strFullPermitNumber="401376" this:Upload_File_To_DMS.IN_strDocumentUrl="/sites/EADMSRobotics1/LIB1/401376/Returns/Compliance Waste Returns Oct to Dec 2020.xls" this:Upload_File_To_DMS.IN_strDocumentFilePath="C:\Users\Mewinter\Desktop\Working Directory\401376.xls" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="clr-namespace:DMS_Library;assembly=DMS Library" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:usal="clr-namespace:UiPathTeam.SharePoint.Activities.Libraries;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Upload_File_To_DMS" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:d="clr-namespace:DMS_Library;assembly=DMS Library" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:usal="clr-namespace:UiPathTeam.SharePoint.Activities.Libraries;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="IN_dictConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="IN_strDMSHomeUrl" Type="InArgument(x:String)" />
@@ -9,6 +9,7 @@
     <x:Property Name="IN_strDMSSiteUrl" Type="InArgument(x:String)" />
     <x:Property Name="IN_strDocumentUrl" Type="InArgument(x:String)" />
     <x:Property Name="IN_strDocumentFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="OUT_browserDMS" Type="OutArgument(ui:Browser)" />
   </x:Members>
   <this:Upload_File_To_DMS.IN_dictConfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" />
@@ -25,7 +26,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>624,741</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>657,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Upload_File_To_DMS_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -85,9 +86,6 @@
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Upload_File_To_DMS" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-    <Flowchart.Variables>
-      <Variable x:TypeArguments="ui:Browser" Name="OUT_browserDMS" />
-    </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,7 +214,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">369.5,0 369.5,50</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Log End" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Log End" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
