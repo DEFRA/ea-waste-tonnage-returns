@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Proxy_Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:oa="clr-namespace:ORATS.Attach_to_ORATS_Windows;assembly=ORATS" xmlns:oi="clr-namespace:ORATS.Import_New_Spreadsheet;assembly=ORATS" xmlns:r="clr-namespace:Reusable_Components;assembly=Reusable Components" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Proxy_Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:oa="clr-namespace:ORATS.Attach_to_ORATS_Windows;assembly=ORATS" xmlns:oi="clr-namespace:ORATS.Import_New_Spreadsheet;assembly=ORATS" xmlns:r="clr-namespace:Reusable_Components;assembly=Reusable Components" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="OUT_strFlow" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>624,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>657,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proxy_Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="46">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -36,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -108,6 +108,8 @@
           <Variable x:TypeArguments="x:String" Name="strSenderEmailAddress" />
           <Variable x:TypeArguments="s:DateTime" Name="dateStartTime" />
           <Variable x:TypeArguments="ui:GenericValue" Name="strCaseID" />
+          <Variable x:TypeArguments="x:String" Name="strDMSUsrename" />
+          <Variable x:TypeArguments="ss:SecureString" Name="strDMSPassword" />
         </Flowchart.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -215,7 +217,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">300,675.5 300,725.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Start Up" sap:VirtualizedContainerService.HintSize="438,631" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <TryCatch DisplayName="Try Start Up" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,6 +235,8 @@
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[dictConfig]</InArgument>
                                 <OutArgument x:TypeArguments="x:String" x:Key="OUT_strLogFilePath">[strLogFilePath]</OutArgument>
                                 <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowORATS">[windowORATS]</OutArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strDMSUsername">[strDMSUsrename]</OutArgument>
+                                <OutArgument x:TypeArguments="ss:SecureString" x:Key="OUT_strDMSPassword">[strDMSPassword]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
@@ -338,7 +342,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">300,1145.5 300,1195.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <TryCatch DisplayName="Try Process Case" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                      <TryCatch DisplayName="Try Process Case" sap:VirtualizedContainerService.HintSize="438,631" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -353,14 +357,36 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Process Case" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logic Workflows\Process Case.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[dictConfig]</InArgument>
-                                                <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">[windowORATS]</InArgument>
-                                                <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">[windowImportSpreadsheet]</OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[strReasonForStoppingRobot]</OutArgument>
-                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strSenderEmailAddress">[strSenderEmailAddress]</OutArgument>
-                                                <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">[mailCurrentCase]</InArgument>
-                                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">[strCaseID]</OutArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">
+                                                  <mva:VisualBasicValue x:TypeArguments="ui:Window" ExpressionText="windowORATS" />
+                                                </InArgument>
+                                                <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">
+                                                  <mva:VisualBasicReference x:TypeArguments="ui:Window" ExpressionText="windowImportSpreadsheet" />
+                                                </OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
+                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
+                                                </OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
+                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReasonForStoppingRobot" />
+                                                </OutArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strSenderEmailAddress">
+                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSenderEmailAddress" />
+                                                </OutArgument>
+                                                <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">
+                                                  <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="mailCurrentCase" />
+                                                </InArgument>
+                                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">
+                                                  <mva:VisualBasicReference x:TypeArguments="ui:GenericValue" ExpressionText="strCaseID" />
+                                                </OutArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDMSUsrename" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">
+                                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="strDMSPassword" />
+                                                </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
@@ -425,7 +451,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">660,1369.04 885.641666666667,1369.04 885.641666666667,1283.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Mark Case as Successful" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                              <Sequence DisplayName="Mark Case as Successful" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
