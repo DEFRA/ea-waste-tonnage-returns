@@ -26,7 +26,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>624,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>656,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Close_Properties_Pane___Check_Disclosure_Status_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -95,9 +95,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID4">
+    <FlowStep x:Name="__ReferenceID3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,430.5</av:Point>
@@ -120,7 +120,7 @@
         </ui:LogMessage>
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID7">
+    <FlowStep x:Name="__ReferenceID6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,117.5</av:Point>
@@ -143,7 +143,7 @@
         </ui:LogMessage>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID5">
+        <FlowStep x:Name="__ReferenceID4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,223.5</av:Point>
@@ -214,7 +214,7 @@
             </If>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID6">
+            <FlowStep x:Name="__ReferenceID5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,339.5</av:Point>
@@ -222,7 +222,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,390.5 300,430.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:String" Name="strInputDisclosureStatus" />
                 </Flowchart.Variables>
@@ -235,14 +235,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID3</x:Reference>
+                  <x:Reference>__ReferenceID2</x:Reference>
                 </Flowchart.StartNode>
-                <FlowStep x:Name="__ReferenceID3">
+                <FlowStep x:Name="__ReferenceID2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">90,127.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,22</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">190,149.5 190,199.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <dp:Click_Close_Button_On_Properties_Pane DisplayName="Click Close Button On Properties Pane" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" sap2010:WorkflowViewState.IdRef="Click_Close_Button_On_Properties_Pane_1">
@@ -252,68 +251,65 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </dp:Click_Close_Button_On_Properties_Pane>
+                </FlowStep>
+                <FlowStep>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">90,199.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">190,221.5 190,271.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <df:Check_Disclosure_Status DisplayName="Check Disclosure Status" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" IN_strDocumentName="[IN_strUpdatedDocumentNameWithExtension]" sap2010:WorkflowViewState.IdRef="Check_Disclosure_Status_1" OUT_strDisclosureStatus="[strInputDisclosureStatus]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </df:Check_Disclosure_Status>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID0">
+                    <FlowDecision x:Name="__ReferenceID0" Condition="[strInputDisclosureStatus = IN_strDisclosureStatus]" DisplayName="Input Disclosure Status" sap:VirtualizedContainerService.HintSize="126,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">90,199.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,22</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">190,221.5 190,271.5</av:PointCollection>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">127,271.5</av:Point>
+                          <av:Size x:Key="ShapeSize">126,87</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">131,656.5 101,656.5 101,719 190,719 190,749</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">253,315 333,315</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <df:Check_Disclosure_Status DisplayName="Check Disclosure Status" sap:VirtualizedContainerService.HintSize="200,22" IN_browserDMS="[IN_browserDMS]" IN_strDMSHomeUrl="[IN_strDMSHomeUrl]" IN_strDMSPassword="[IN_strDMSPassword]" IN_strDMSUsername="[IN_strDMSUsername]" IN_strDocumentName="[IN_strUpdatedDocumentNameWithExtension]" sap2010:WorkflowViewState.IdRef="Check_Disclosure_Status_1" OUT_strDisclosureStatus="[strInputDisclosureStatus]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </df:Check_Disclosure_Status>
-                      <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID1" Condition="[strInputDisclosureStatus = IN_strDisclosureStatus]" DisplayName="Input Disclosure Status" sap:VirtualizedContainerService.HintSize="126,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <av:Point x:Key="ShapeLocation">127,271.5</av:Point>
-                              <av:Size x:Key="ShapeSize">126,87</av:Size>
-                              <av:PointCollection x:Key="TrueConnector">131,656.5 101,656.5 101,719 190,719 190,749</av:PointCollection>
-                              <av:PointCollection x:Key="FalseConnector">253,315 333,315</av:PointCollection>
+                              <av:Point x:Key="ShapeLocation">333,304</av:Point>
+                              <av:Size x:Key="ShapeSize">200,22</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <FlowDecision.False>
-                            <FlowStep x:Name="__ReferenceID2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">333,304</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Throw DisplayName="Throw System Exception" Exception="[New System.Exception(&quot;Disclosure Status was not input correctly&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </Throw>
-                            </FlowStep>
-                          </FlowDecision.False>
-                        </FlowDecision>
-                      </FlowStep.Next>
-                    </FlowStep>
+                          <Throw DisplayName="Throw System Exception" Exception="[New System.Exception(&quot;Disclosure Status was not input correctly&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Throw>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
                   </FlowStep.Next>
                 </FlowStep>
                 <x:Reference>__ReferenceID0</x:Reference>
                 <x:Reference>__ReferenceID1</x:Reference>
-                <x:Reference>__ReferenceID2</x:Reference>
               </Flowchart>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID4</x:Reference>
+                <x:Reference>__ReferenceID3</x:Reference>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
-    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>

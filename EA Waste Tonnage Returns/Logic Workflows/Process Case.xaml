@@ -228,36 +228,16 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read Excel Waste Return" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Data Workflows\Excel\Read Excel Waste Return.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReturnPeriod">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReturnPeriod" />
-                                </OutArgument>
-                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">
-                                  <mva:VisualBasicReference x:TypeArguments="ui:GenericValue" ExpressionText="OUT_strPermitNumber" />
-                                </OutArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strDeclarationName">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDeclarationName" />
-                                </OutArgument>
-                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strDeclarationDate">
-                                  <mva:VisualBasicReference x:TypeArguments="ui:GenericValue" ExpressionText="strDeclarationDate" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingDirectory" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAttachmentName" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strPermitType">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPermitType" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strRevisedPermitNumber">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRevisedPermitNumber" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFullPermitNumberWithType">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strFullPermitNumberWithType" />
-                                </OutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReturnPeriod">[strReturnPeriod]</OutArgument>
+                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strPermitNumber">[OUT_strPermitNumber]</OutArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strDeclarationName">[strDeclarationName]</OutArgument>
+                                <OutArgument x:TypeArguments="ui:GenericValue" x:Key="OUT_strDeclarationDate">[strDeclarationDate]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">[strWorkingDirectory]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">[strAttachmentName]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strPermitType">[strPermitType]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strRevisedPermitNumber">[strRevisedPermitNumber]</InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFullPermitNumberWithType">[strFullPermitNumberWithType]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -331,13 +311,9 @@
                                 <TryCatch.Try>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Check Return Period" sap:VirtualizedContainerService.HintSize="336,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Logic Workflows\Check Return Period.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnPeriod">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strReturnPeriod" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnPeriod">[strReturnPeriod]</InArgument>
                                       <OutArgument x:TypeArguments="x:String" x:Key="OUT_strContinue" />
-                                      <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReturnPeriodForRename">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReturnPeriodForRename" />
-                                      </OutArgument>
+                                      <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReturnPeriodForRename">[strReturnPeriodForRename]</OutArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -626,51 +602,21 @@
                                                                     <TryCatch.Try>
                                                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Upload Excel Return To DMS" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Logic Workflows\DMS\Upload Excel Return To DMS.xaml">
                                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDMSUsername" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">
-                                                                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="IN_strDMSPassword" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingDirectory" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAttachmentName" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDeclarationDate" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailRecievedDate" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDeclarationName" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_dictConfig(&quot;DMSExcelReturnDisclosureStatus&quot;)" />
-                                                                          </InArgument>
-                                                                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
-                                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
-                                                                          </OutArgument>
-                                                                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
-                                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReasonForStoppingRobot" />
-                                                                          </OutArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strFullPermitNumber">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strFullPermitNumberWithType" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">
-                                                                            <Literal x:TypeArguments="x:String">/sites/EADMSRobotics1/LIB1/401376/Returns/Compliance Waste Returns Oct to Dec 2020.xls</Literal>
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentFilePath">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingDirectory + strAttachmentName + &quot;.xls&quot;" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnPeriodForRename">
-                                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strReturnPeriodForRename" />
-                                                                          </InArgument>
+                                                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">[IN_strDMSUsername]</InArgument>
+                                                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">[IN_strDMSPassword]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">[strWorkingDirectory]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">[strAttachmentName]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">[strDeclarationDate]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">[strEmailRecievedDate]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">[strDeclarationName]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">[IN_dictConfig("DMSExcelReturnDisclosureStatus")]</InArgument>
+                                                                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
+                                                                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[OUT_strReasonForStoppingRobot]</OutArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strFullPermitNumber">[strFullPermitNumberWithType]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">/sites/EADMSRobotics1/LIB1/401376/Returns/Compliance Waste Returns Oct to Dec 2020.xls</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentFilePath">[strWorkingDirectory + strAttachmentName + ".xls"]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnPeriodForRename">[strReturnPeriodForRename]</InArgument>
                                                                           <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnYear" />
                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                       </ui:InvokeWorkflowFile>
