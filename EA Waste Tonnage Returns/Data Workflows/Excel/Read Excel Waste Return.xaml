@@ -10,7 +10,7 @@
     <x:Property Name="OUT_strPermitType" Type="OutArgument(x:String)" />
     <x:Property Name="IN_strRevisedPermitNumber" Type="InArgument(x:String)" />
     <x:Property Name="OUT_strFullPermitNumberWithType" Type="OutArgument(x:String)" />
-    <x:Property Name="OUT_strReturnPeriodYear" Type="OutArgument(x:String)" />
+    <x:Property Name="OUT_strReturnPeriodYear" Type="OutArgument(ui:GenericValue)" />
   </x:Members>
   <this:Read_Excel_Waste_Return.IN_dictConfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" />
@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>656,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Read_Excel_Waste_Return_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -217,9 +217,9 @@
                           <OutArgument x:TypeArguments="x:String">[OUT_strReturnPeriod]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <ui:ExcelReadCell Cell="D19" DisplayName="Read 'Return Period Year' Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="Site_Information">
+                      <ui:ExcelReadCell Cell="D19" DisplayName="Read 'Return Period Year' Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="Site_Information">
                         <ui:ExcelReadCell.Result>
-                          <OutArgument x:TypeArguments="x:String">[OUT_strReturnPeriodYear]</OutArgument>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[OUT_strReturnPeriodYear]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
                       <ui:ExcelReadCell Cell="B26" DisplayName="Read 'Permit Number' Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="Site_Information">
@@ -284,10 +284,7 @@
                         </WriteLine>
                       </Sequence>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID14" DisplayName="Got Return Year?" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                          <FlowDecision.Condition>
-                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="OUT_strReturnPeriodYear IsNot Nothing" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID14" Condition="[OUT_strReturnPeriodYear IsNot Nothing]" DisplayName="Got Return Year?" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,10 +311,10 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                                   <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[OUT_strReturnPeriodYear]</OutArgument>
+                                    <OutArgument x:TypeArguments="ui:GenericValue">[OUT_strReturnPeriodYear]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[OUT_strReturnPeriodYear.Trim]</InArgument>
+                                    <InArgument x:TypeArguments="ui:GenericValue">[OUT_strReturnPeriodYear.Trim]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[&quot;Return period year is &quot; + OUT_strReturnPeriodYear]">
