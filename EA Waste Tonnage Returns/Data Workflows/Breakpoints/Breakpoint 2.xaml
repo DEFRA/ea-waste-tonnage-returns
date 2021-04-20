@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>657,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>656,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Breakpoint_2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -73,7 +73,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,279.5 300,329.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MessageBox Buttons="YesNo" Caption="Breakpoint 1" ChosenButton="[OUT_strContinue]" DisplayName="Breakpoint 2" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The robot has reached Breakpoint 2 and has uploaded the Waste Return excel sheet. Please check the properties that have been input for the waste return to see if all of the information is correct.&quot; + Environment.NewLine + Environment.NewLine + &quot;Click Yes if everything is correct and you want the robot to continue.&quot; + Environment.NewLine + &quot;Click No if you want the robot to stop processing this case.&quot;]">
+      <ui:MessageBox Buttons="YesNo" Caption="Breakpoint 2" ChosenButton="[OUT_strContinue]" DisplayName="Breakpoint 2" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The robot has reached Breakpoint 2 and has uploaded the Waste Return excel sheet. Please check the properties that have been input for the waste return to see if all of the information is correct.&quot; + Environment.NewLine + Environment.NewLine + &quot;Click Yes if everything is correct and you want the robot to continue.&quot; + Environment.NewLine + &quot;Click No if you want the robot to stop processing this case.&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>

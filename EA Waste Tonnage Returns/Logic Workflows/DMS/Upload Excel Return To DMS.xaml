@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Upload_Excel_Return_To_DMS" this:Upload_Excel_Return_To_DMS.IN_strWorkingDirectory="C:\Users\Mewinter\Desktop\Working Directory\" this:Upload_Excel_Return_To_DMS.IN_strAttachmentName="68506.xls" this:Upload_Excel_Return_To_DMS.IN_strDocumentDate="01/10/2020" this:Upload_Excel_Return_To_DMS.IN_strReceivedDate="15/04/2021" this:Upload_Excel_Return_To_DMS.IN_strExternalAuthor="Marcey Winter" this:Upload_Excel_Return_To_DMS.IN_strDisclosureStatus="Public Register" this:Upload_Excel_Return_To_DMS.IN_strFullPermitNumber="68506" this:Upload_Excel_Return_To_DMS.IN_strDocumentUrl="/sites/EADMSRobotics1/LIB1/68506/Returns/Compliance Waste Returns Jul to Sep 2019.xls" this:Upload_Excel_Return_To_DMS.IN_strDocumentFilePath="C:\Users\Mewinter\Desktop\Working Directory\68506.xls" this:Upload_Excel_Return_To_DMS.IN_strReturnPeriodForRename="Jul to Sep" this:Upload_Excel_Return_To_DMS.IN_strReturnYear="2019" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Upload_Excel_Return_To_DMS" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:us="clr-namespace:UiPathTeam.SharePoint;assembly=UiPathTeam.SharePoint" xmlns:usa="clr-namespace:UiPathTeam.SharePoint.Activities;assembly=UiPathTeam.SharePoint.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="IN_dictConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="IN_strDMSUsername" Type="InArgument(x:String)" />
@@ -12,7 +12,6 @@
     <x:Property Name="OUT_strFlow" Type="OutArgument(x:String)" />
     <x:Property Name="OUT_strReasonForStoppingRobot" Type="OutArgument(x:String)" />
     <x:Property Name="IN_strFullPermitNumber" Type="InArgument(x:String)" />
-    <x:Property Name="IN_strDocumentUrl" Type="InArgument(x:String)" />
     <x:Property Name="IN_strDocumentFilePath" Type="InArgument(x:String)" />
     <x:Property Name="IN_strReturnPeriodForRename" Type="InArgument(x:String)" />
     <x:Property Name="IN_strReturnYear" Type="InArgument(x:String)" />
@@ -99,6 +98,7 @@
       <Variable x:TypeArguments="x:String" Name="strReturnFolderUrl" />
       <Variable x:TypeArguments="x:String" Name="strDMSSiteUrl" />
       <Variable x:TypeArguments="x:String" Name="strUpdatedDocumentName" />
+      <Variable x:TypeArguments="x:String" Name="strDocumentUrl" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -233,7 +233,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Sequence sap:VirtualizedContainerService.HintSize="484,352" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <Sequence sap:VirtualizedContainerService.HintSize="484,452" sap2010:WorkflowViewState.IdRef="Sequence_17">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,6 +261,14 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">[String.Format(IN_dictConfig("DMSExcelReturnTitle"), IN_strReturnPeriodForRename, IN_strReturnYear) + ".xls"]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strDocumentUrl]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[String.Format(IN_dictConfig("DMSDocumentUrl"), IN_strFullPermitNumber, strUpdatedDocumentName)]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -370,7 +378,7 @@
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnFolderUrl">[strReturnFolderUrl]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strFullPermitNumber">[IN_strFullPermitNumber]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSSiteUrl">[strDMSSiteUrl]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">[IN_strDocumentUrl]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">[strDocumentUrl]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentFilePath">[IN_strDocumentFilePath]</InArgument>
                                 <OutArgument x:TypeArguments="ui:Browser" x:Key="OUT_browserDMS">[browserDMS]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
@@ -521,15 +529,33 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Input File Properties Workflow" sap:VirtualizedContainerService.HintSize="358,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Data Workflows\DMS\Input File Properties.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">[strDMSHomeUrl]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">[IN_strDMSUsername]</InArgument>
-                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">[IN_strDMSPassword]</InArgument>
-                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserDMS">[browserDMS]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">[IN_strDocumentDate]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">[IN_strReceivedDate]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">[IN_strExternalAuthor]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">[IN_strDisclosureStatus]</InArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDMSHomeUrl" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDMSUsername" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">
+                                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="IN_strDMSPassword" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserDMS">
+                                                  <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browserDMS" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDocumentDate" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReceivedDate" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strExternalAuthor" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDisclosureStatus" />
+                                                </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Assign DisplayName="Reset Retry Counter" sap:VirtualizedContainerService.HintSize="358,60" sap2010:WorkflowViewState.IdRef="Assign_8">
