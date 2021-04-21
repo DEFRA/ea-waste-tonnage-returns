@@ -167,7 +167,7 @@
               <av:PointCollection x:Key="ConnectorLocation">160,289.5 160,344</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get IN Args" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Get IN Args" sap:VirtualizedContainerService.HintSize="526,1183" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -371,16 +371,36 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Upload File To DMS Workflow" sap:VirtualizedContainerService.HintSize="357,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Data Workflows\DMS\Upload File To DMS.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">[strDMSHomeUrl]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">[IN_strDMSUsername]</InArgument>
-                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">[IN_strDMSPassword]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnFolderUrl">[strReturnFolderUrl]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strFullPermitNumber">[IN_strFullPermitNumber]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSSiteUrl">[strDMSSiteUrl]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">[strDocumentUrl]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentFilePath">[IN_strDocumentFilePath]</InArgument>
-                                <OutArgument x:TypeArguments="ui:Browser" x:Key="OUT_browserDMS">[browserDMS]</OutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDMSHomeUrl" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDMSUsername" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">
+                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="IN_strDMSPassword" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReturnFolderUrl">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strReturnFolderUrl" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strFullPermitNumber">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strFullPermitNumber" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSSiteUrl">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDMSSiteUrl" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentUrl">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDocumentUrl" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentFilePath">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDocumentFilePath" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="ui:Browser" x:Key="OUT_browserDMS">
+                                  <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browserDMS" />
+                                </OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <Assign DisplayName="Reset Retry Counter" sap:VirtualizedContainerService.HintSize="357,60" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -529,33 +549,15 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Input File Properties Workflow" sap:VirtualizedContainerService.HintSize="358,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Data Workflows\DMS\Input File Properties.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDMSHomeUrl" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDMSUsername" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">
-                                                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="IN_strDMSPassword" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserDMS">
-                                                  <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browserDMS" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDocumentDate" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReceivedDate" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strExternalAuthor" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strDisclosureStatus" />
-                                                </InArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSHomeUrl">[strDMSHomeUrl]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDMSUsername">[IN_strDMSUsername]</InArgument>
+                                                <InArgument x:TypeArguments="ss:SecureString" x:Key="IN_strDMSPassword">[IN_strDMSPassword]</InArgument>
+                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserDMS">[browserDMS]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDocumentDate">[IN_strDocumentDate]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReceivedDate">[IN_strReceivedDate]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strExternalAuthor">[IN_strExternalAuthor]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strDisclosureStatus">[IN_strDisclosureStatus]</InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Assign DisplayName="Reset Retry Counter" sap:VirtualizedContainerService.HintSize="358,60" sap2010:WorkflowViewState.IdRef="Assign_8">
