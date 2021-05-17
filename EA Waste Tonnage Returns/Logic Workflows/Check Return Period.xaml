@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="IN_strReturnPeriod" Type="InArgument(x:String)" />
     <x:Property Name="OUT_strContinue" Type="OutArgument(x:String)" />
+    <x:Property Name="OUT_strReturnPeriodForRename" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>657,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Reporting_Period_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -155,7 +156,7 @@
                     <av:Size x:Key="ShapeSize">200,51</av:Size>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[OUT_strContinue = &quot;No&quot;]" DisplayName="If Return Period is Incorrect &amp; User wants to stop processing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_6">
+                <If Condition="[OUT_strContinue = &quot;No&quot;]" DisplayName="If Return Period is Incorrect &amp; User wants to stop processing" sap:VirtualizedContainerService.HintSize="940,740" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -164,6 +165,75 @@
                   <If.Then>
                     <Throw DisplayName="Throw Business Exception" Exception="[New BusinessRuleException(&quot;Reporting period did not match and the case was stopped by the user&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="695,592" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[IN_strReturnPeriod.Contains(&quot;Year&quot;)]" sap:VirtualizedContainerService.HintSize="653,500" sap2010:WorkflowViewState.IdRef="If_7">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Replace &quot;Year (&quot; with &quot;&quot;" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[IN_strReturnPeriod]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strReturnPeriod.Replace("Year (", "")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Replace &quot;)&quot; with &quot;&quot;" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[IN_strReturnPeriod]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strReturnPeriod.Replace(")", "")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Replace &quot;-&quot; with &quot; to &quot;" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[OUT_strReturnPeriodForRename]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strReturnPeriod.Replace("-", " to ")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Replace &quot;Qtr &quot; with &quot;&quot;" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[IN_strReturnPeriod]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strReturnPeriod.Replace("Qtr ", "")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Replace &quot;-&quot; with &quot; to &quot;" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[OUT_strReturnPeriodForRename]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strReturnPeriod.Replace("-", " to ")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Else>
                 </If>
               </FlowStep>
             </FlowStep.Next>

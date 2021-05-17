@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="IN_strPermitNumber" Type="InArgument(x:String)" />
     <x:Property Name="OUT_strPermitType" Type="OutArgument(x:String)" />
+    <x:Property Name="OUT_strFullPermitNumberWithType" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>747,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>624,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Validate_Permit_Number___Get_Permit_Number_Type_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -72,9 +73,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID9">
+    <FlowStep x:Name="__ReferenceID11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,329.5</av:Point>
@@ -90,7 +91,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID11">
+    <FlowStep x:Name="__ReferenceID13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -100,7 +101,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - Validate Permit Number &amp; Get Permit Number Type&quot;]" />
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID10">
+        <FlowStep x:Name="__ReferenceID12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,228.5</av:Point>
@@ -108,7 +109,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,279.5 300,329.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="1156,636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="1276,730" sap2010:WorkflowViewState.IdRef="Flowchart_2">
             <Flowchart.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolMatchesEPRPermitType" />
               <Variable x:TypeArguments="x:Boolean" Name="boolMatchesEAWMLPermitType" />
@@ -119,21 +120,22 @@
                 <av:Point x:Key="ShapeLocation">450,2.5</av:Point>
                 <av:Size x:Key="ShapeSize">60,75</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">480,77.5 480,127.5</av:PointCollection>
-                <x:Double x:Key="Width">1122.5</x:Double>
+                <x:Double x:Key="Width">1242.5</x:Double>
+                <x:Double x:Key="Height">694.5</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID8</x:Reference>
+              <x:Reference>__ReferenceID10</x:Reference>
             </Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">91.5,243</av:Point>
                   <av:Size x:Key="ShapeSize">262,60</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">222.5,303 222.5,333 222.516666666667,333 222.516666666667,353</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">222.5,303 222.5,353</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="Assign Type To EAWML" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[OUT_strPermitType]</OutArgument>
                 </Assign.To>
@@ -147,29 +149,53 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID5">
+                <FlowStep x:Name="__ReferenceID8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">107.516666666667,353</av:Point>
-                      <av:Size x:Key="ShapeSize">230,62</av:Size>
+                      <av:Point x:Key="ShapeLocation">91.5,353</av:Point>
+                      <av:Size x:Key="ShapeSize">262,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">222.5,413 222.5,463</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[OUT_strPermitType + &quot; &quot; + IN_strPermitNumber]">
+                  <Assign DisplayName="Assign EAWML Full Permit" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_strFullPermitNumberWithType]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[OUT_strPermitType + " " + IN_strPermitNumber]</InArgument>
+                    </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </WriteLine>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">107,463</av:Point>
+                          <av:Size x:Key="ShapeSize">231,62</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <WriteLine DisplayName="Write Full EAWML Permit" sap:VirtualizedContainerService.HintSize="231,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Full permit number with type is &quot; + OUT_strFullPermitNumberWithType]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </WriteLine>
+                    </FlowStep>
+                  </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
             <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">706.5,247</av:Point>
+                  <av:Point x:Key="ShapeLocation">826.5,247</av:Point>
                   <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">806.5,299 806.5,349</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">926.5,299 926.5,359</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:IsMatch DisplayName="Is Match EPR Format" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="IsMatch_2" Input="[IN_strPermitNumber]" IsBuilderTabModified="False" Pattern="[a-zA-Z]{2}\d{4}[a-zA-Z]{2}" RegexOption="IgnoreCase, Compiled" Result="[boolMatchesEPRPermitType]">
@@ -180,29 +206,26 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:IsMatch>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID0" DisplayName="EPR Format?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolMatchesEPRPermitType" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID0" Condition="[boolMatchesEPRPermitType]" DisplayName="EPR Format?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">770.5,349</av:Point>
+                      <av:Point x:Key="ShapeLocation">890.5,359</av:Point>
                       <av:Size x:Key="ShapeSize">72,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">770.5,392.5 690.5,392.5</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">842.5,392.5 922.5,392.5</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">890.5,402.5 810.5,402.5</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">962.5,402.5 1042.5,402.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
                     <FlowStep x:Name="__ReferenceID1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">428.5,362.5</av:Point>
+                          <av:Point x:Key="ShapeLocation">548.5,372.5</av:Point>
                           <av:Size x:Key="ShapeSize">262,60</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">559.5,422.5 559.5,472.5</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">679.5,432.5 679.5,482.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign DisplayName="Assign Type To EPR" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[OUT_strPermitType]</OutArgument>
                         </Assign.To>
@@ -216,20 +239,44 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID6">
+                        <FlowStep x:Name="__ReferenceID9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">444.5,472.5</av:Point>
-                              <av:Size x:Key="ShapeSize">230,62</av:Size>
+                              <av:Point x:Key="ShapeLocation">548.5,482.5</av:Point>
+                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">679.5,542.5 679.5,592.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[OUT_strPermitType + &quot;-&quot; + IN_strPermitNumber]">
+                          <Assign DisplayName="Assign EPR Full Permit" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[OUT_strFullPermitNumberWithType]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[OUT_strPermitType + "-" + IN_strPermitNumber]</InArgument>
+                            </Assign.Value>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </WriteLine>
+                          </Assign>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">564,592.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">231,62</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <WriteLine DisplayName="Write Full EPR Permit" sap:VirtualizedContainerService.HintSize="231,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Full permit number with type is &quot; + OUT_strFullPermitNumberWithType]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </WriteLine>
+                            </FlowStep>
+                          </FlowStep.Next>
                         </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>
@@ -238,7 +285,7 @@
                     <FlowStep x:Name="__ReferenceID7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">922.5,381.5</av:Point>
+                          <av:Point x:Key="ShapeLocation">1042.5,391.5</av:Point>
                           <av:Size x:Key="ShapeSize">200,22</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -250,7 +297,7 @@
             </FlowStep>
             <x:Reference>__ReferenceID0</x:Reference>
             <x:Reference>__ReferenceID1</x:Reference>
-            <FlowStep x:Name="__ReferenceID8">
+            <FlowStep x:Name="__ReferenceID10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">380,127.5</av:Point>
@@ -266,25 +313,16 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:IsMatch>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID4" DisplayName="EAWML Format?" sap:VirtualizedContainerService.HintSize="93,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolMatchesEAWMLPermitType" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID4" Condition="[boolMatchesEAWMLPermitType]" DisplayName="EAWML Format?" sap:VirtualizedContainerService.HintSize="94,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID2}" False="{x:Reference __ReferenceID3}">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">433.5,229.5</av:Point>
-                      <av:Size x:Key="ShapeSize">93,87</av:Size>
+                      <av:Size x:Key="ShapeSize">94,87</av:Size>
                       <av:PointCollection x:Key="TrueConnector">433.5,273 353.5,273</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">526.5,273 706.5,273</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">527.5,273 826.5,273</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <x:Reference>__ReferenceID2</x:Reference>
-                  </FlowDecision.True>
-                  <FlowDecision.False>
-                    <x:Reference>__ReferenceID3</x:Reference>
-                  </FlowDecision.False>
                 </FlowDecision>
               </FlowStep.Next>
             </FlowStep>
@@ -292,13 +330,15 @@
             <x:Reference>__ReferenceID5</x:Reference>
             <x:Reference>__ReferenceID6</x:Reference>
             <x:Reference>__ReferenceID7</x:Reference>
+            <x:Reference>__ReferenceID8</x:Reference>
+            <x:Reference>__ReferenceID9</x:Reference>
           </Flowchart>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID9</x:Reference>
+            <x:Reference>__ReferenceID11</x:Reference>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
   </Flowchart>
 </Activity>
