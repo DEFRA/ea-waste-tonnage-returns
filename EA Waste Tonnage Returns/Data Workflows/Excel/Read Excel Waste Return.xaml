@@ -531,14 +531,14 @@
                   <av:PointCollection x:Key="ConnectorLocation">230,189.5 230,239.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[IN_strRevisedPermitNumber Is Nothing]" DisplayName="If IN_strRevisedPermitNumber Is Nothing" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[IN_strRevisedPermitNumber Is Nothing]" DisplayName="If IN_strRevisedPermitNumber Is Nothing" sap:VirtualizedContainerService.HintSize="579,344" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Else>
-                  <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" DisplayName="Write Revised Permit Number To Excel Waste Return" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[IN_strWorkingDirectory + IN_strAttachmentName]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Write Revised Permit Number To Excel Waste Return" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[IN_strWorkingDirectory + IN_strAttachmentName]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>

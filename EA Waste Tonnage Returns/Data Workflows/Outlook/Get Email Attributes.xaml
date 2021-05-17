@@ -70,6 +70,9 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Get_Email_Attributes" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -223,7 +226,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,405 300,459</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Get Revised Permit Number From Subject" sap:VirtualizedContainerService.HintSize="695,892" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Get Revised Permit Number From Subject" sap:VirtualizedContainerService.HintSize="695,993" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matchesCurrentCaseSubject" />
                       <Variable x:TypeArguments="x:String" Name="strCurrentCaseSubject" />
@@ -242,7 +245,7 @@
                       </Assign.Value>
                     </Assign>
                     <ui:Matches sap:VirtualizedContainerService.HintSize="653,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[strCurrentCaseSubject]" IsBuilderTabModified="False" Pattern="\(\w*\)" RegexOption="IgnoreCase, Compiled" Result="[matchesCurrentCaseSubject]" />
-                    <If Condition="[matchesCurrentCaseSubject.Count = 0]" sap:VirtualizedContainerService.HintSize="653,601" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[matchesCurrentCaseSubject.Count = 0]" sap:VirtualizedContainerService.HintSize="653,702" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Then>
                         <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
@@ -261,7 +264,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="304,453" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence sap:VirtualizedContainerService.HintSize="304,554" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,12 +272,13 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[OUT_strSenderEmailAddress]</OutArgument>
+                              <OutArgument x:TypeArguments="x:String">[OUT_strRevisedPermitNumber]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[matchesCurrentCaseSubject.First.Groups(1).ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String">[matchesCurrentCaseSubject.First.Groups(0).ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Revised permit number from subject is &quot; + OUT_strRevisedPermitNumber]" />
                           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[OUT_strRevisedPermitNumber]</OutArgument>
