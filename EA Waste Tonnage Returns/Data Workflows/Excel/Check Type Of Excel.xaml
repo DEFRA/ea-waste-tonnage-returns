@@ -4,6 +4,7 @@
     <x:Property Name="IN_strWorkingDirectory" Type="InArgument(x:String)" />
     <x:Property Name="IN_strAttachmentName" Type="InArgument(x:String)" />
     <x:Property Name="IN_strPermitNumber" Type="InArgument(x:String)" />
+    <x:Property Name="OUT_strExcelFilePath" Type="OutArgument(x:String)" />
   </x:Members>
   <this:Check_Type_Of_Excel___Rename_Files.IN_dictConfig>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" />
@@ -14,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>747,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Check_Type_Of_Excel___Rename_Files_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -44,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -82,9 +83,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID4">
+    <FlowStep x:Name="__ReferenceID6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -94,7 +95,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - Read Excel Waste Return&quot;]" />
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID1">
+        <FlowStep x:Name="__ReferenceID3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,228.5</av:Point>
@@ -130,7 +131,7 @@
             </If>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID3">
+            <FlowStep x:Name="__ReferenceID5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,344.5</av:Point>
@@ -148,7 +149,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID0</x:Reference>
+                  <x:Reference>__ReferenceID2</x:Reference>
                 </Flowchart.StartNode>
                 <FlowStep>
                   <sap:WorkflowViewStateService.ViewState>
@@ -171,11 +172,12 @@
                     </If.Else>
                   </If>
                 </FlowStep>
-                <FlowStep x:Name="__ReferenceID0">
+                <FlowStep x:Name="__ReferenceID2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each .xlsx File in Working Directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(IN_strWorkingDirectory)]">
@@ -184,21 +186,80 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                         </ActivityAction.Argument>
-                        <If Condition="[Path.GetExtension(item) = &quot;.xlsx&quot;]" DisplayName="If .xlsx, change to .xls" sap:VirtualizedContainerService.HintSize="724,240" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If Condition="[Path.GetExtension(item) = &quot;.xlsx&quot;]" DisplayName="If .xlsx, change to .xls" sap:VirtualizedContainerService.HintSize="767,533" sap2010:WorkflowViewState.IdRef="If_4">
                           <If.Then>
-                            <ufa:ConvertXLSXToXLS ResultingFilePath="{x:Null}" DirectoryToSave="[IN_strWorkingDirectory]" DisplayName="Convert XLSX To XLS" FileExtensionPath=".xls" sap:VirtualizedContainerService.HintSize="449,92" sap2010:WorkflowViewState.IdRef="ConvertXLSXToXLS_2" NewFileName="[IN_strPermitNumber]" OldFileExtension="Excel Files|*xlsx" OldFilePath="[IN_strWorkingDirectory + IN_strAttachmentName]" />
+                            <Sequence sap:VirtualizedContainerService.HintSize="491,385" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ufa:ConvertXLSXToXLS ResultingFilePath="{x:Null}" DirectoryToSave="[IN_strWorkingDirectory]" DisplayName="Convert XLSX To XLS" FileExtensionPath=".xls" sap:VirtualizedContainerService.HintSize="449,92" sap2010:WorkflowViewState.IdRef="ConvertXLSXToXLS_2" NewFileName="[IN_strPermitNumber]" OldFileExtension="Excel Files|*xlsx" OldFilePath="[IN_strWorkingDirectory + IN_strAttachmentName]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="449,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[OUT_strExcelFilePath]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[IN_strWorkingDirectory + IN_strPermitNumber + ".xls"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="449,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[OUT_strExcelFilePath]" />
+                            </Sequence>
                           </If.Then>
                           <If.Else>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Not .xlsx file" />
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Not .xlsx file" />
                           </If.Else>
                         </If>
                       </ActivityAction>
                     </ui:ForEach.Body>
                   </ui:ForEach>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID1" DisplayName="OUT_strExcelFilePath" sap:VirtualizedContainerService.HintSize="116,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                      <FlowDecision.Condition>
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="OUT_strExcelFilePath IsNot Nothing" />
+                      </FlowDecision.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">242,228.5</av:Point>
+                          <av:Size x:Key="ShapeSize">116,87</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">358,272 488,272 488,319</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID0">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">388,319</av:Point>
+                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Assign OUT_strExcelFilePath" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[OUT_strExcelFilePath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[IN_strWorkingDirectory + IN_strAttachmentName]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[OUT_strExcelFilePath]" />
+                          </Sequence>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
                 </FlowStep>
+                <x:Reference>__ReferenceID0</x:Reference>
+                <x:Reference>__ReferenceID1</x:Reference>
               </Flowchart>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID2">
+                <FlowStep x:Name="__ReferenceID4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,445.5</av:Point>
@@ -220,8 +281,8 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID1</x:Reference>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
   </Flowchart>
 </Activity>

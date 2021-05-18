@@ -98,6 +98,7 @@
       <Variable x:TypeArguments="x:String" Name="strFullPermitNumberWithType" />
       <Variable x:TypeArguments="x:String" Name="strReturnPeriodForRename" />
       <Variable x:TypeArguments="x:String" Name="strReturnPeriodYear" />
+      <Variable x:TypeArguments="x:String" Name="strExcelFilePath" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -378,10 +379,21 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Check Type Of Excel" sap:VirtualizedContainerService.HintSize="361,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Data Workflows\Excel\Check Type Of Excel.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">[strWorkingDirectory]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">[strAttachmentName]</InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strPermitNumber">[OUT_strPermitNumber]</InArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingDirectory">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingDirectory" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strAttachmentName">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAttachmentName" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strPermitNumber">
+                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OUT_strPermitNumber" />
+                                                </InArgument>
+                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strExcelFilePath">
+                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExcelFilePath" />
+                                                </OutArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -448,7 +460,7 @@
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">220,1276.5</av:Point>
                                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">320,1328.5 320,1377.5</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">320,1327.5 320,1377.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <TryCatch DisplayName="Try Attach Excel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
@@ -460,10 +472,18 @@
                                                 <TryCatch.Try>
                                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Attach Excel File workflow" sap:VirtualizedContainerService.HintSize="355,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Logic Workflows\ORATS\Attach Excel File.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                                                      <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">[IN_windowORATS]</InArgument>
-                                                      <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">[OUT_windowImportSpreadsheet]</OutArgument>
-                                                      <InArgument x:TypeArguments="x:String" x:Key="IN_strExcelFilePath">[strWorkingDirectory + strAttachmentName]</InArgument>
+                                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                      </InArgument>
+                                                      <InArgument x:TypeArguments="ui:Window" x:Key="IN_windowORATS">
+                                                        <mva:VisualBasicValue x:TypeArguments="ui:Window" ExpressionText="IN_windowORATS" />
+                                                      </InArgument>
+                                                      <OutArgument x:TypeArguments="ui:Window" x:Key="OUT_windowImportSpreadsheet">
+                                                        <mva:VisualBasicReference x:TypeArguments="ui:Window" ExpressionText="OUT_windowImportSpreadsheet" />
+                                                      </OutArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="IN_strExcelFilePath">
+                                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strExcelFilePath" />
+                                                      </InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                   </ui:InvokeWorkflowFile>
                                                 </TryCatch.Try>

@@ -3,7 +3,6 @@
     <x:Property Name="IN_dictConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="OUT_strSenderEmailAddress" Type="OutArgument(x:String)" />
     <x:Property Name="OUT_strEmailReceivedDate" Type="OutArgument(x:String)" />
-    <x:Property Name="OUT_strAttachmentName" Type="OutArgument(x:String)" />
     <x:Property Name="IN_mailCurrentCase" Type="InArgument(snm:MailMessage)" />
     <x:Property Name="OUT_strRevisedPermitNumber" Type="OutArgument(x:String)" />
   </x:Members>
@@ -111,7 +110,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,395.5 300,445.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="634,711" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -176,7 +175,7 @@
                       <InArgument x:TypeArguments="x:String">[matchesCurrentCaseSenderEmail.First.Groups(1).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Sender email address is &quot; + OUT_strSenderEmailAddress]" />
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Got sender email address" />
                 </Sequence>
               </If.Else>
             </If>
@@ -226,7 +225,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,405 300,459</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Get Revised Permit Number From Subject" sap:VirtualizedContainerService.HintSize="695,993" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Get Revised Permit Number From Subject" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matchesCurrentCaseSubject" />
                       <Variable x:TypeArguments="x:String" Name="strCurrentCaseSubject" />
@@ -337,7 +336,7 @@
                             </Throw>
                           </If.Then>
                           <If.Else>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Number of email attachments is &quot; + colEmailAttachments.Count.ToString]" />
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="231,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Number of email attachments is &quot; + colEmailAttachments.Count.ToString]" />
                           </If.Else>
                         </If>
                       </Sequence>
@@ -346,25 +345,31 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">200,575</av:Point>
-                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Get Attachments File Name" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:String">[OUT_strAttachmentName]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:String">[IN_mailCurrentCase.Attachments(0).Name]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Attachment file name is &quot; + OUT_strAttachmentName]" />
-                          </Sequence>
+                          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <Sequence DisplayName="Get Attachments File Name" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[OUT_strAttachmentName]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[IN_mailCurrentCase.Attachments(0).Name]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Attachment file name is &quot; + OUT_strAttachmentName]" />
+                                </Sequence>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
                         </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>

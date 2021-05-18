@@ -45,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -71,6 +71,8 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Retrieve_Email_Data___Save_Email_and_Attachment" sap:VirtualizedContainerService.HintSize="1218,984" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -195,22 +197,31 @@
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">210.666666666667,608.833333333333</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">310.666666666667,660.833333333333 310.666666666667,709.833333333333</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">310.666666666667,659.833333333333 310.666666666667,709.833333333333</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch DisplayName="Try Get Email &amp; Excel Attachment" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="421,405" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence sap:VirtualizedContainerService.HintSize="421,404" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Email &amp; Excel Attachment" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Data Workflows\Outlook\Get Email &amp; Excel Attachment.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get Email &amp; Excel Attachment" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Data Workflows\Outlook\Get Email &amp; Excel Attachment.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="OUT_strWorkingDirectory">[OUT_strWorkingDirectory]</OutArgument>
-                            <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">[IN_mailCurrentCase]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="OUT_strWorkingDirectory">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strWorkingDirectory" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">
+                              <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="IN_mailCurrentCase" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="OUT_strAttachmentName">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strAttachmentName" />
+                            </OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -348,9 +359,6 @@
                             </OutArgument>
                             <OutArgument x:TypeArguments="x:String" x:Key="OUT_strEmailReceivedDate">
                               <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strEmailReceivedDate" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="OUT_strAttachmentName">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strAttachmentName" />
                             </OutArgument>
                             <InArgument x:TypeArguments="snm:MailMessage" x:Key="IN_mailCurrentCase">
                               <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="IN_mailCurrentCase" />
