@@ -144,7 +144,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300.641666666667,425.5 300.641666666667,475.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Config Reader" sap:VirtualizedContainerService.HintSize="438,531" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Config Reader" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -160,7 +160,7 @@
                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Config Reader" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Data Workflows\Config Reader.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="IN_strConfigPath">
-                          <Literal x:TypeArguments="x:String">Documents\Config\test config.xlsx</Literal>
+                          <Literal x:TypeArguments="x:String">Documents\Config\config.xlsx</Literal>
                         </InArgument>
                         <OutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="OUT_dictConfig">
                           <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
@@ -436,15 +436,32 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">660,1369.04 885.641666666667,1369.04 885.641666666667,1283.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Mark Case as Successful" sap:VirtualizedContainerService.HintSize="376,340" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                              <Sequence DisplayName="Mark Case as Successful" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MoveOutlookMessage Account="[dictConfig(&quot;EmailAccount&quot;).ToString]" DisplayName="Move Email To Successful Folder" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_3" MailFolder="Inbox\Robot Processing\Successful" MailMessage="[mailCurrentCase]" />
                                                 <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Case Successful" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;The case was completed successfully. Details are recorded in the log file&quot;]" />
                                                 <r:Log_Case___Preset DisplayName="Log Case - Successful" sap:VirtualizedContainerService.HintSize="334,22" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[dateStartTime]" IN_dateCaseTotalTime="[(Now - dateStartTime).ToString]" IN_strCaseID="[strCaseID]" IN_strFailureMessage="N/A" IN_strFilePath="[strLogFilePath]" IN_strNotes="[strSenderEmailAddress + &quot; &quot; + Environment.NewLine + strReasonForStoppingRobot]" IN_strSuccessful="Success" IN_strUser="[Environment.UserName]" IN_strWorkpackageName="[dictConfig(&quot;WorkpackageName&quot;)]" sap2010:WorkflowViewState.IdRef="Log_Case___Preset_1" />
+                                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                                  <ui:CommentOut.Body>
+                                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:MoveOutlookMessage Account="[dictConfig(&quot;EmailAccount&quot;).ToString]" DisplayName="Move Email To Successful Folder" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_3" MailFolder="Inbox\Robot Processing\Successful" MailMessage="[mailCurrentCase]" />
+                                                    </Sequence>
+                                                  </ui:CommentOut.Body>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:CommentOut>
                                               </Sequence>
                                               <FlowStep.Next>
                                                 <FlowDecision x:Name="__ReferenceID19" Condition="[OUT_strFlow &lt;&gt; &quot;Stop&quot;]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
@@ -582,9 +599,26 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MoveOutlookMessage Account="[dictConfig(&quot;EmailAccount&quot;).ToString]" DisplayName="Move Email To Exceptions Folder" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_4" MailFolder="Inbox\Robot Processing\Exceptions" MailMessage="[mailCurrentCase]" />
                                                 <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Case Failed" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;An error has been encountered within the process. Details are recorded in the log file.&quot;]" />
                                                 <r:Log_Case___Preset IN_strCaseID="{x:Null}" IN_strNotes="{x:Null}" DisplayName="Log Case - Failed" sap:VirtualizedContainerService.HintSize="334,22" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[dateStartTime]" IN_dateCaseTotalTime="[(Now - dateStartTime).ToString]" IN_strFailureMessage="[exceptionCurrent.Message]" IN_strFilePath="[strLogFilePath]" IN_strSuccessful="Failed" IN_strUser="[Environment.UserName]" IN_strWorkpackageName="[dictConfig(&quot;WorkpackageName&quot;)]" sap2010:WorkflowViewState.IdRef="Log_Case___Preset_2" />
+                                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                                  <ui:CommentOut.Body>
+                                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:MoveOutlookMessage Account="[dictConfig(&quot;EmailAccount&quot;).ToString]" DisplayName="Move Email To Exceptions Folder" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_4" MailFolder="Inbox\Robot Processing\Exceptions" MailMessage="[mailCurrentCase]" />
+                                                    </Sequence>
+                                                  </ui:CommentOut.Body>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:CommentOut>
                                               </Sequence>
                                               <FlowStep.Next>
                                                 <x:Reference>__ReferenceID2</x:Reference>
