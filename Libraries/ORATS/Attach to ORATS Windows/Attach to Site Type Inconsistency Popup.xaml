@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680,519</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,519</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Attach_to_Site_Type_Inconsistency_Popup_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,7 +65,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope SearchScope="{x:Null}" Window="{x:Null}" ApplicationWindow="[OUT_windowSiteInconsistency]" ContinueOnError="True" DisplayName="Attach Window Site Type Inconsistency" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="631915db3baf938207893174a8eebf8f" Selector="&lt;wnd app='msaccess.exe' cls='#32770' title='Site Type Inconsistency' /&gt;" TimeoutMS="[IN_intTimeout]">
+    <ui:WindowScope SearchScope="{x:Null}" Window="{x:Null}" ApplicationWindow="[OUT_windowSiteInconsistency]" ContinueOnError="True" DisplayName="Attach Window Site Type Inconsistency" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="631915db3baf938207893174a8eebf8f" Selector="&lt;wnd app='msaccess.exe' cls='#32770' title='Site Type*' /&gt;" TimeoutMS="[IN_intTimeout]">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

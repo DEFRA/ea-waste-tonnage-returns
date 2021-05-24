@@ -4,7 +4,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "DMS.Library": "[1.0.11]",
-    "ORATS": "[1.0.10]",
+    "ORATS": "[1.0.11]",
     "Reusable.Components": "[1.0.10]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.9.3]",
@@ -16,7 +16,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.3.0",
-  "projectVersion": "1.0.7",
+  "projectVersion": "1.0.8",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,

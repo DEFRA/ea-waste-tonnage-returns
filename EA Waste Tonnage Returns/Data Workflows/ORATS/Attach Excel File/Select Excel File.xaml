@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1055,1117</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1055,1084</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Select_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -65,7 +65,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="The workflow selects the correct excel file to be uploaded onto ORATS. The error handling is done locally as the upload can &#xA;take up to two minutes at times, the process checks every 5 seconds to see if the upload has finished and throws an exception &#xA;if a limit has been reached for retries (this is in the config). Once this is done the robot checks for the Site Type Inconsistency&#xD;&#xA;popup, if it exists it clicks Yes, if not the robot carries on as normal.&#xA;&#xA;IN: dictConfig, strExcelFilePath, windowImportSpreadsheet, windowFileExplorer&#xA;OUT:" DisplayName="Select_Excel_File" sap:VirtualizedContainerService.HintSize="1065,1019" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="The workflow selects the correct excel file to be uploaded onto ORATS. The error handling is done locally as the upload can &#xA;take up to two minutes at times, the process checks every 5 seconds to see if the upload has finished and throws an exception &#xA;if a limit has been reached for retries (this is in the config). Once this is done the robot checks for the Site Type Missing\Inconsistency&#xA;popup, if it exists it clicks Yes, if not the robot carries on as normal.&#xA;&#xA;IN: dictConfig, strExcelFilePath, windowImportSpreadsheet, windowFileExplorer&#xA;OUT:" DisplayName="Select_Excel_File" sap:VirtualizedContainerService.HintSize="1065,1019" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strPermitNumber" />
       <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
@@ -187,7 +187,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">300,765.5 300,815.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Look for Site Inconsistency Popup" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                              <TryCatch DisplayName="Try Look for Site Missing\Inconsistency Popup" sap:VirtualizedContainerService.HintSize="438,403" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                 <TryCatch.Variables>
                                   <Variable x:TypeArguments="ui:Window" Name="windowSiteInconsistency" />
                                 </TryCatch.Variables>
