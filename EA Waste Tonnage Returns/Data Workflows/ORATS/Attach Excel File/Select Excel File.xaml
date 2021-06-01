@@ -37,7 +37,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,6 +63,8 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="The workflow selects the correct excel file to be uploaded onto ORATS. The error handling is done locally as the upload can &#xA;take up to two minutes at times, the process checks every 5 seconds to see if the upload has finished and throws an exception &#xA;if a limit has been reached for retries (this is in the config). Once this is done the robot checks for the Site Type Missing\Inconsistency&#xA;popup, if it exists it clicks Yes, if not the robot carries on as normal.&#xA;&#xA;IN: dictConfig, strExcelFilePath, windowImportSpreadsheet, windowFileExplorer&#xA;OUT:" DisplayName="Select_Excel_File" sap:VirtualizedContainerService.HintSize="1065,1019" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -125,7 +127,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,359</av:Point>
                   <av:Size x:Key="ShapeSize">200,22</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,381 300,431</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,381 300,429</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <of:Input_File_Path DisplayName="Input File Path" sap:VirtualizedContainerService.HintSize="200,22" IN_strFilePath="[IN_strExcelFilePath]" IN_windowFileExplorer="[IN_windowFileExplorer]" sap2010:WorkflowViewState.IdRef="Input_File_Path_1">
@@ -139,9 +141,9 @@
                 <FlowStep x:Name="__ReferenceID3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,431</av:Point>
+                      <av:Point x:Key="ShapeLocation">200,429</av:Point>
                       <av:Size x:Key="ShapeSize">200,22</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,453 300,503</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">300,451 300,503</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <of:Click_Open_Button DisplayName="Click Open Button" sap:VirtualizedContainerService.HintSize="200,22" IN_windowFileExplorer="[IN_windowFileExplorer]" sap2010:WorkflowViewState.IdRef="Click_Open_Button_1">
@@ -187,7 +189,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">300,765.5 300,815.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Look for Site Missing\Inconsistency Popup" sap:VirtualizedContainerService.HintSize="438,403" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                              <TryCatch DisplayName="Try Look for Site Missing\Inconsistency Popup" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                 <TryCatch.Variables>
                                   <Variable x:TypeArguments="ui:Window" Name="windowSiteInconsistency" />
                                 </TryCatch.Variables>
@@ -203,7 +205,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <oa:Attach_to_Site_Type_Inconsistency_Popup DisplayName="Attach to Site Type Inconsistency Popup" sap:VirtualizedContainerService.HintSize="200,22" IN_intTimeout="[IN_dictConfig(&quot;timeoutXS&quot;)]" sap2010:WorkflowViewState.IdRef="Attach_to_Site_Type_Inconsistency_Popup_2" OUT_windowSiteInconsistency="[windowSiteInconsistency]" />
+                                    <oa:Attach_to_Site_Type_Inconsistency_Popup DisplayName="Attach to Site Type Inconsistency Popup" sap:VirtualizedContainerService.HintSize="200,22" IN_intTimeout="[IN_dictConfig(&quot;timeoutS&quot;)]" sap2010:WorkflowViewState.IdRef="Attach_to_Site_Type_Inconsistency_Popup_2" OUT_windowSiteInconsistency="[windowSiteInconsistency]" />
                                     <ous:Click_Yes DisplayName="Click Yes" sap:VirtualizedContainerService.HintSize="200,22" IN_windowSiteInconsistency="[windowSiteInconsistency]" sap2010:WorkflowViewState.IdRef="Click_Yes_2" />
                                   </Sequence>
                                 </TryCatch.Try>

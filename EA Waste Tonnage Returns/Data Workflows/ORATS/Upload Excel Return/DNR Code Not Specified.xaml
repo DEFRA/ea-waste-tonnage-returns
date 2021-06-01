@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -59,6 +59,8 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="This workflow checks if the DNR Code Not Specified popup exists, if it does the robot clicks no and a business exception is thrown. If it doesn't then the robot skips this step and carries on with the process.&#xA;&#xA;IN: dictConfig&#xA;OUT:" DisplayName="DNR_Code_Not_Specified" sap:VirtualizedContainerService.HintSize="869,845" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -123,7 +125,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,376.5 300,426.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <oa:Attach_to_Missing_DNR_Code_Popup DisplayName="Attach to Missing DNR Code Popup" sap:VirtualizedContainerService.HintSize="200,22" IN_intTimeout="[IN_dictConfig(&quot;timeoutMS&quot;)]" sap2010:WorkflowViewState.IdRef="Attach_to_Missing_DNR_Code_Popup_1" OUT_windowMissingDNR="[windowMissingDNR]">
+              <oa:Attach_to_Missing_DNR_Code_Popup DisplayName="Attach to Missing DNR Code Popup" sap:VirtualizedContainerService.HintSize="200,22" IN_intTimeout="[IN_dictConfig(&quot;timeoutS&quot;)]" sap2010:WorkflowViewState.IdRef="Attach_to_Missing_DNR_Code_Popup_1" OUT_windowMissingDNR="[windowMissingDNR]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
