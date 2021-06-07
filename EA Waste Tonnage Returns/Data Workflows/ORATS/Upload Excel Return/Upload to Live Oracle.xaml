@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>652,1240</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1121,1225</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Upload_to_Live_Oracle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,10 +63,11 @@
       <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="This workflow looks for the Upload to Live Oracle popup, if it finds it it clicks Yes, then looks for the Upload complete Popup, clicking OK on it. If either one is not found then a system exception is thrown.&#xA;&#xA;IN: dictConfig&#xA;OUT:" DisplayName="Upload_to_Live_Oracle" sap:VirtualizedContainerService.HintSize="638,1175" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="This workflow looks for the Upload to Live Oracle popup, if it finds it it clicks Yes, then looks for the Upload complete Popup, clicking OK on it. If either one is not found then a system exception is thrown.&#xA;&#xA;IN: dictConfig&#xA;OUT:" DisplayName="Upload_to_Live_Oracle" sap:VirtualizedContainerService.HintSize="1131,1160" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="ui:Window" Name="windowUploadToLive" />
       <Variable x:TypeArguments="ui:Window" Name="windowUploadComplete" />
+      <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -76,13 +77,13 @@
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,137.5</av:PointCollection>
         <x:Double x:Key="Height">1052</x:Double>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        <x:Double x:Key="Width">604</x:Double>
+        <x:Double x:Key="Width">1097.1416666666669</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID10">
+    <FlowStep x:Name="__ReferenceID13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,137.5</av:Point>
@@ -161,12 +162,12 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ouu:Click_Yes>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID9">
+                        <FlowStep x:Name="__ReferenceID10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">200,641</av:Point>
                               <av:Size x:Key="ShapeSize">200,22</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,663 300,711</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">300,663 300,713</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1">
@@ -177,12 +178,12 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </Delay>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID6">
+                            <FlowStep x:Name="__ReferenceID0">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,711</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,713</av:Point>
                                   <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,733 300,783</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,735 300,783</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <oa:Attach_to_Upload_Complete_Popup DisplayName="Attach to Upload Complete Popup" sap:VirtualizedContainerService.HintSize="200,22" IN_intTimeout="[IN_dictConfig(&quot;timeoutM&quot;)]" sap2010:WorkflowViewState.IdRef="Attach_to_Upload_Complete_Popup_1" OUT_windowUploadComplete="[windowUploadComplete]">
@@ -193,13 +194,13 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </oa:Attach_to_Upload_Complete_Popup>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID7" Condition="[windowUploadComplete IsNot Nothing]" DisplayName="Popup Exists?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                <FlowDecision x:Name="__ReferenceID6" Condition="[windowUploadComplete IsNot Nothing]" DisplayName="Popup Exists?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <av:Point x:Key="ShapeLocation">261.5,783</av:Point>
                                       <av:Size x:Key="ShapeSize">77,87</av:Size>
-                                      <av:PointCollection x:Key="FalseConnector">338.5,826.5 350,826.5 350,753 600.5,753 600.5,978 430,978 430,1016.5 400,1016.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">338.5,826.5 752.141666666667,826.5 752.141666666667,771</av:PointCollection>
                                       <av:PointCollection x:Key="TrueConnector">261.5,826.5 240,826.5 240,889 300,889 300,919</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -220,7 +221,7 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ouu1:Click_OK>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID0">
+                                        <FlowStep x:Name="__ReferenceID9">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">200,991</av:Point>
@@ -233,7 +234,64 @@
                                     </FlowStep>
                                   </FlowDecision.True>
                                   <FlowDecision.False>
-                                    <x:Reference>__ReferenceID0</x:Reference>
+                                    <FlowDecision x:Name="__ReferenceID11" Condition="[intRetryCounter &lt; IN_dictConfig(&quot;selectExcelRetries&quot;)]" DisplayName="Retry?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">717.141666666667,684</av:Point>
+                                          <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">717.141666666667,727.5 647.141666666667,727.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">787.141666666667,727.5 857.141666666667,727.5</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID12">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">447.141666666667,694.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">447.141666666667,727.5 417.141666666667,727.5 417.141666666667,724 400,724</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Retry Logic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="Increase Retry Counter" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[intRetryCounter]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">[intRetryCounter + 1]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID0</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID7">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">857.141666666667,716.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Throw DisplayName="Throw System Exception" Exception="[New System.Exception(&quot;Failed to complete the upload of the return&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Throw>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
                                   </FlowDecision.False>
                                 </FlowDecision>
                               </FlowStep.Next>
@@ -272,25 +330,13 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">388.5,815.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,22</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Throw DisplayName="Throw System Exception" Exception="[New System.Exception(&quot;Failed to complete the upload of the return&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </Throw>
-    </FlowStep>
     <x:Reference>__ReferenceID8</x:Reference>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
   </Flowchart>
 </Activity>

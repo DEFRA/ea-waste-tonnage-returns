@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>747,788</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>652,788</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Start_Up_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -61,6 +61,8 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:Annotation.AnnotationText="This workflow is the inital Pop Up box to the user to let them know the robot is ready to start the process, to which they can press yes or no.&#xA;&#xA;IN:&#xA;OUT: OUT_strStart" DisplayName="Start_Process" sap:VirtualizedContainerService.HintSize="634,723" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -106,7 +108,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Buttons="YesNo" Caption="Robot is ready to start" ChosenButton="[OUT_strStart]" DisplayName="Start Process Pop Up" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Robot is ready and available to start Waste Tonnage Returns.&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Please ensure all work is saved, ORATS is open WITHOUT loading all waste permits data, and Outlook is open before starting the robot.&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to start this process?&quot;]">
+            <ui:MessageBox Buttons="YesNo" Caption="Robot is ready to start" ChosenButton="[OUT_strStart]" DisplayName="Start Process Pop Up" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Robot is ready and available to start Waste Tonnage Returns.&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Please ensure all work is saved, all instances of Excel are saved and closed, ORATS is open WITHOUT loading all waste permits data, and Outlook is open before starting the robot.&quot; + System.Environment.NewLine + System.Environment.NewLine + &quot;Would you like to start this process?&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
